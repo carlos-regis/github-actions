@@ -1,4 +1,4 @@
-name: ch02-first
+name: 0202-first
 on:
   push:
     branches:
