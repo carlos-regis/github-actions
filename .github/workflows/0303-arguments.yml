@@ -13,7 +13,7 @@ jobs:
           ls -ltr
           java -version
           javac --version
-          echo $JAVA_HOME
+          echo JAVA_HOME: \$JAVA_HOME
 
     - name: Check out Apache Tomcat
       uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
           ls -ltr
           java -version
           javac -version
-          echo $JAVA_HOME
+          echo JAVA_HOME: \$JAVA_HOME
 
     - name: Copy 0303-tomcat-users.xml into Tomcat configuration directory
       run: cp -v 0303-tomcat-users.xml ./tomcat/conf/tomcat-users.xml
