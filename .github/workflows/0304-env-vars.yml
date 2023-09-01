@@ -1,4 +1,4 @@
-name: Environment Variables
+name: 0304-env-vars
 env:
   WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable'
 on: [push]
