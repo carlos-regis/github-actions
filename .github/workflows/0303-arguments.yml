@@ -33,7 +33,7 @@ jobs:
       run: |
           ls -ltr
           java -version
-          javac --version
+          javac -version
 
     - name: Copy 0303-tomcat-users.xml into Tomcat configuration directory
       run: cp -v 0303-tomcat-users.xml ./tomcat/conf/tomcat-users.xml
