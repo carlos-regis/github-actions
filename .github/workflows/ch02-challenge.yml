@@ -1,12 +1,10 @@
+# Push trigger | four jobs | print the date
+# Job 1 - ubuntu-latest
+# Job 2 - windows-latest
+# Job 3 - macos-latest
+# Job 4 - any runner ! depends on jobs 1, 2, and 3
 name: ch02-challenge
-on:
-  push:
-    branches:
-      - develop
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push]
 jobs:
   jobs1:
     name: First job
@@ -15,14 +13,30 @@ jobs:
       - name: Step one
         uses: actions/checkout@v3
       - name: Step two
-        run: env | sort
+        run: date
   jobs2:
     name: Second job
-    needs: jobs1
     runs-on: windows-latest
     steps:
       - name: Step one
         uses: actions/checkout@v3      
       - name: Step two
+        run: Get-Date
+  jobs3:
+    name: Third job
+    runs-on: macos-latest
+    steps:
+      - name: Step one
+        uses: actions/checkout@v3      
+      - name: Step two
         run: "Get-ChildItem Env: | Sort-Object Name"
+  jobs4:
+    name: Fourth job
+    needs: [jobs1, jobs2, jobs3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step one
+        uses: actions/checkout@v3      
+      - name: Step two
+        run: "date +%F"
   
