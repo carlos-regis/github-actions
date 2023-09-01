@@ -40,4 +40,4 @@ jobs:
       run: |
         cd ./tomcat
         ant -version
-        ant -v
+        ant -target=11
