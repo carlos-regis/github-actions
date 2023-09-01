@@ -4,7 +4,7 @@
 # Job 3 - macos-latest
 # Job 4 - any runner ! depends on jobs 1, 2, and 3
 name: ch02-challenge
-on: [push]
+on: push
 jobs:
   jobs1:
     name: First job
