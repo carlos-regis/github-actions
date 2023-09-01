@@ -1,4 +1,4 @@
-name: ch02-lint-python
+name: ch03-lint-python
 on: push
 jobs:
   lint:
