@@ -1,4 +1,4 @@
-name: hello
+name: ch01-hello
 on: [push]
 jobs:
   build:
