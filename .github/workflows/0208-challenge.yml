@@ -3,7 +3,7 @@
 # Job 2 - windows-latest
 # Job 3 - macos-latest
 # Job 4 - any runner ! depends on jobs 1, 2, and 3
-name: ch02-challenge
+name: 0208-challenge
 on: push
 jobs:
   ubuntu:
