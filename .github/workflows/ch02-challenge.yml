@@ -6,37 +6,25 @@
 name: ch02-challenge
 on: push
 jobs:
-  jobs1:
-    name: First job
+  ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - name: Step one
-        uses: actions/checkout@v3
-      - name: Step two
-        run: "date +%F"
-  jobs2:
-    name: Second job
+      - uses: actions/checkout@v3
+      - run: "date +%F"
+  windows:
     runs-on: windows-latest
     steps:
-      - name: Step one
-        uses: actions/checkout@v3      
-      - name: Step two
-        run: Get-Date
-  jobs3:
-    name: Third job
+      - uses: actions/checkout@v3      
+      - run: Get-Date
+  macos:
     runs-on: macos-latest
     steps:
-      - name: Step one
-        uses: actions/checkout@v3      
-      - name: Step two
-        run: "date +%F"
-  jobs4:
-    name: Fourth job
-    needs: [jobs1, jobs2, jobs3]
+      - uses: actions/checkout@v3      
+      - run: "date +%F"
+  depends:
+    needs: [ubuntu, windows, macos]
     runs-on: ubuntu-latest
     steps:
-      - name: Step one
-        uses: actions/checkout@v3      
-      - name: Step two
-        run: "date +%F"
+    - uses: actions/checkout@v3      
+    - run: "date +%F"
   
