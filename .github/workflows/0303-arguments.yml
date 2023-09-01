@@ -40,4 +40,4 @@ jobs:
       run: |
         cd ./tomcat
         ant -version
-        ant target=11
+        ant -v | grep -i "java version"
